@@ -11,10 +11,63 @@
 				"type": "constructor"
 			},
 			{
+				"inputs": [
+					{
+						"internalType": "address payable",
+						"name": "walletAddress",
+						"type": "address"
+					},
+					{
+						"internalType": "string",
+						"name": "name",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "percent",
+						"type": "uint256"
+					}
+				],
+				"name": "addWaitress",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
 				"inputs": [],
 				"name": "addtips",
 				"outputs": [],
 				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "viewWaitress",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "address payable",
+								"name": "walletAddress",
+								"type": "address"
+							},
+							{
+								"internalType": "string",
+								"name": "name",
+								"type": "string"
+							},
+							{
+								"internalType": "uint256",
+								"name": "percent",
+								"type": "uint256"
+							}
+						],
+						"internalType": "struct tips.Waitress[]",
+						"name": "",
+						"type": "tuple[]"
+					}
+				],
+				"stateMutability": "view",
 				"type": "function"
 			},
 			{
@@ -24,6 +77,35 @@
 					{
 						"internalType": "uint256",
 						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "waitress",
+				"outputs": [
+					{
+						"internalType": "address payable",
+						"name": "walletAddress",
+						"type": "address"
+					},
+					{
+						"internalType": "string",
+						"name": "name",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "percent",
 						"type": "uint256"
 					}
 				],
@@ -59,11 +141,11 @@
 	},
 	"sources": {
 		"tipjar.sol": {
-			"keccak256": "0x88f68155dcb93303d77a8c46832b46469057d3921c1f87e44231bce442a330e9",
+			"keccak256": "0xdba4715320da31dba3c2a293e405ad7270c2cf60b0af2ef54158ae6bbda758af",
 			"license": "UNLICENSED",
 			"urls": [
-				"bzz-raw://e06f64f95b09afb91eeefa399b967d047fc9619e058df1cfaa9255942e0ceab4",
-				"dweb:/ipfs/QmU9VmLBmpjsvmVNXzxvudpSDiEntZVVDWo5HUrz15nwUA"
+				"bzz-raw://7d5335427553a9ac9211015448ebc9d7d2d899751f9591cf048a14a25809001e",
+				"dweb:/ipfs/QmXUKcXkoKmgagj6Tpk2xC7DcHRTKjsK4k3WTaeH38aPBw"
 			]
 		}
 	},

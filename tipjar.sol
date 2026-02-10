@@ -1,27 +1,63 @@
 // SPDX-License-Identifier: UNLICENSED
-
 pragma solidity 0.8.31;
 
 contract tips {
 
-address owner;
+    address owner;
 
-constructor() {
+    // 3.1 Structure for a Waitress
+    struct Waitress {
+        address payable walletAddress;
+        string name;
+        uint percent;
+    }
 
-owner = msg.sender;
+    // List of all waitresses
+    Waitress[] public waitress;
 
-}
+    constructor() {
+        owner = msg.sender;
+    }
 
-// 1. Put fund in smart contract
+    // 1. Put fund in smart contract
+    function addtips() payable public {}
 
-function addtips() payable public {}
+    // 2. View balance
+    function viewtips() public view returns(uint) {
+        return address(this).balance;
+    }
 
-// 2. View balance
+    // 5. View waitress
+    function viewWaitress() public view returns (Waitress[] memory) {
+        return waitress;
+    }
 
-function viewtips() public view returns(uint) {
+    modifier onlyOwner() {
+        require(msg.sender == owner, "Only owner can call");
+        _;
+    }
 
-return address(this).balance;
+    function addWaitress(
+        address payable walletAddress,
+        string memory name,
+        uint percent
+    ) public onlyOwner {
 
-}
+        bool waitressExist = false;
 
+        if (waitress.length >= 1) {
+            // Check Logic
+             for(uint i=0; i<waitress.length; i++){
+               if(waitress[i].walletAddress == walletAddress){
+                waitressExist = true;
+               } 
+            }
+        }
+
+        if (!waitressExist) {
+            waitress.push(
+                Waitress(walletAddress, name, percent)
+            );
+        }
+    }
 }
