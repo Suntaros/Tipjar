@@ -11,20 +11,96 @@
 				"type": "constructor"
 			},
 			{
+				"anonymous": false,
 				"inputs": [
 					{
-						"internalType": "address payable",
-						"name": "walletAddress",
+						"indexed": true,
+						"internalType": "address",
+						"name": "from",
 						"type": "address"
 					},
 					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "TipAdded",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "totalAmount",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "timestamp",
+						"type": "uint256"
+					}
+				],
+				"name": "TipsDistributed",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "wallet",
+						"type": "address"
+					},
+					{
+						"indexed": false,
 						"internalType": "string",
 						"name": "name",
 						"type": "string"
 					},
 					{
+						"indexed": false,
 						"internalType": "uint256",
 						"name": "percent",
+						"type": "uint256"
+					}
+				],
+				"name": "WaitressAdded",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "wallet",
+						"type": "address"
+					}
+				],
+				"name": "WaitressRemoved",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address payable",
+						"name": "_walletAddress",
+						"type": "address"
+					},
+					{
+						"internalType": "string",
+						"name": "_name",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_percent",
 						"type": "uint256"
 					}
 				],
@@ -51,13 +127,58 @@
 				"inputs": [
 					{
 						"internalType": "address",
-						"name": "walletAddress",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"name": "isWaitress",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "owner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_walletAddress",
 						"type": "address"
 					}
 				],
 				"name": "removeWaitress",
 				"outputs": [],
 				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "totalShares",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
 				"type": "function"
 			},
 			{
@@ -82,7 +203,7 @@
 								"type": "uint256"
 							}
 						],
-						"internalType": "struct tips.Waitress[]",
+						"internalType": "struct Tips.Waitress[]",
 						"name": "",
 						"type": "tuple[]"
 					}
@@ -111,7 +232,7 @@
 						"type": "uint256"
 					}
 				],
-				"name": "waitress",
+				"name": "waitresses",
 				"outputs": [
 					{
 						"internalType": "address payable",
@@ -146,7 +267,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"tipjar.sol": "tips"
+			"tipjar.sol": "Tips"
 		},
 		"evmVersion": "osaka",
 		"libraries": {},
@@ -161,11 +282,11 @@
 	},
 	"sources": {
 		"tipjar.sol": {
-			"keccak256": "0x06edaa2e29341e52f3f27250573961b8eab0742a139976834a632ac66f42b647",
+			"keccak256": "0x973e6833ed5917bbb150318eee6fb2287c51c4a00767a0c7f21b9b4ff46ad82d",
 			"license": "UNLICENSED",
 			"urls": [
-				"bzz-raw://fa241200df5e69021a5b1dcc9a562cc35329e76b147f1b84b4e4af7f41600ad4",
-				"dweb:/ipfs/QmTPeATZVkKJ85HS453zs3dGyWbmajtXfmdSh9At1i7FMH"
+				"bzz-raw://28e55fd185be7908e7bcff2c316988524a807da5cdabd8a7c6542e5a87a15c73",
+				"dweb:/ipfs/QmZdESSvUMVPbe55H8RzGAzQ8D6sQvpWz461Q7uBW8BNfk"
 			]
 		}
 	},
